@@ -1,0 +1,85 @@
+
+
+
+
+
+
+
+
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #d2d2de;
+}
+
+.swiperslide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+.container {
+   width: 94%;
+   margin: auto;
+   
+   border-radius: 10px;
+   user-select: none;
+   padding: 10px 20px;
+}
+.container h1 {
+  font-size: 1.5rem;
+  margin-top: 100px;
+}
+.container img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  user-select: none;
+}
+
+.books {
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 10px;
+  width: fit-content;
+}
+
+.booksList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: fit-content;
+  margin: 10px auto;
+  padding: 5px 15px;
+}
+
+.book {
+  background-color: #d2d2de;
+  border-radius: 10px;
+  
+  padding: 10px 15px;
+}
+
+.book img {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.book h3 {
+  font-size: 0.8rem;
+  color: blue;
+}
+
+.searchBox input {
+  display: flex;
+  margin: 10px auto;
+  padding: 10px 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 60%;
+  
+}

@@ -18,8 +18,14 @@
         "name": "next"
       }
     ],
+    // absolute import
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/utils/*" : ["./src/utils/*"],
+      "@/templates/*" : ["./src/components/templates/*"],
+      "@/modules/*" : ["./src/components/modules/*"],
+      "@/elements/*" : ["./src/components/elements/*"],
+      "@/images/*" : ["./public/images/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

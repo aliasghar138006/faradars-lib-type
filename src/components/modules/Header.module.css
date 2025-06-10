@@ -1,0 +1,42 @@
+
+.container {
+    display: flex;
+    direction: rtl;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 15px;
+    padding: 20px 10px;
+    background-color: rgb(210, 210, 222);
+    border-radius: 10px;
+    color: black;
+    font-size: 1.1rem;
+    
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.icon img {
+    border-radius: 50%;
+    margin:10px;
+}
+
+.items , .auth {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth div {
+    margin: 0px 20px;
+    cursor: pointer;
+}
+
+.items div  {
+    margin: 0px 50px;
+    cursor: pointer;
+}

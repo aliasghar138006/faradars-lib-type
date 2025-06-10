@@ -1,0 +1,16 @@
+.container {
+    background-color: aqua;
+    color: white;
+    border-radius: 5px;
+    display: block;
+    padding: 10px 15px;
+    margin: 5px auto;
+    width: 80%;
+    cursor: pointer;
+    text-align: center;
+    
+}
+
+.container {
+    text-align: center;
+}
