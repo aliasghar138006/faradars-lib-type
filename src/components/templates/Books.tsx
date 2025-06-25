@@ -1,35 +1,36 @@
-"use client"
-import getBooks from "@/utils/getBooks";
-import { useEffect, useState } from "react";
-import Card from "../modules/Card";
+'use client'
+import React, { useEffect, useState } from 'react'
+import Card from '../modules/Card'
+import getBooks from '@/utils/getBooks'
 import styles from "@/templates/MainPage.module.css"
 
-type booksType = {
+
+type bookType = {
   _id:string,
   title : string,
-  author : string,
   description : string,
+  author : string,
   image : {data : {data : Buffer}}
 }
 function Books() {
-     const [books , setBooks] =  useState<booksType[]>([])
+    const [books , setBooks] =  useState<bookType[]>([])
      const [search , setSearch] =  useState<string>("")
      
   useEffect(() => {
     const getData = async () => {
       const data = await getBooks();
       
-    const filteredBooks= data.data.filter((item:booksType) => (item.title.includes(search)));
+    const filteredBooks= data.data.filter((item:bookType) => (item.title.includes(search)));
         
       setBooks(filteredBooks)
     }
     getData();
   } , [search])
-  const changeHandler = async (e:{target:{value:string}}) => {
+  const changeHandler = (e:{target : {value : string}}) => {
     setSearch(e.target.value)
   }
   return (
-    <div>
+     <div>
         <div className={styles.searchBox}>
             <input placeholder="نام کتاب را وارد کنید..." type="text" value={search} onChange={changeHandler} />
         </div>

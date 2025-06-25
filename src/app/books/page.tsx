@@ -1,10 +1,10 @@
 import Books from '@/components/templates/Books'
 import React from 'react'
 
-function books() {
+function page() {
   return (
     <Books />
   )
 }
 
-export default books
+export default page

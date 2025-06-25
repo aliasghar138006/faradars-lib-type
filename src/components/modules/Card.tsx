@@ -1,16 +1,17 @@
-import Image from 'next/image'
-import React, { FC } from 'react'
-import Btn from '@/elements/Btn'
+import Image from "next/image"
+import { FC } from "react"
+import Btn from "@/elements/Btn"
 
-type book = {
-    _id:string,
+
+type bookType = {
+  _id:string,
   title : string,
-  author : string,
   description : string,
+  author : string,
   image : {data : {data : Buffer}}
 }
 
-const Card:FC<{item:book}> = ({item}) => {
+const Card:FC<{item:bookType}> = ({item}) => {
   return (
     <div>
               <Image src={`data:image/png;base64,${Buffer.from(item.image.data.data).toString("base64")}`} width={100} height={100} alt="alt" />

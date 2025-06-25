@@ -1,38 +1,38 @@
 'use client'
+import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
+import getBooks from "@/utils/getBooks"
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
-import styles from './MainPage.module.css'
-import { useEffect, useState } from 'react';
-import getBooks from "@/utils/getBooks"
+import styles from "@/templates/MainPage.module.css"
+import Card from '@/modules/Card';
 
-import Card from '../modules/Card';
-
-type booksType = {
+type bookType = {
   _id:string,
   title : string,
-  author : string,
   description : string,
+  author : string,
   image : {data : {data : Buffer}}
 }
 
 function MainPage() {
-  const [books , setBooks] =  useState<booksType[]>([])
+  const [books , setBooks] = useState<bookType[]>([])
+
   useEffect(() => {
     const getData = async () => {
       const data = await getBooks();
-      const filteredData = data.data.slice(0,5)
+      const filteredData = data.data.slice(0,5);
       console.log(filteredData);
       setBooks(filteredData)
     }
-    getData();
+    getData()
   } , [])
   return (
-    <div className={styles.container}>
+     <div className={styles.container}>
         <Swiper
         
         effect={'coverflow'}

@@ -6,6 +6,7 @@ import styles from "@/modules/Header.module.css"
 import Logo from "@/images/logo.png"
 import Link from 'next/link'
 
+
 function Header() {
   return (
      <div className={styles.container}>
@@ -19,8 +20,8 @@ function Header() {
         <div> درباره ما</div>
       </div>
       <div className={styles.auth}>
-        <div>ثبت نام</div>
-        <div>ورود</div>
+        <Link href="/signup">ثبت نام</Link>
+        <Link href="/signin">ورود</Link>
       </div>
     </div>
   )

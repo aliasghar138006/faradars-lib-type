@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Layout from "@/components/layout/Layout";
 import localFont from "next/font/local"
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -29,6 +30,7 @@ export default function RootLayout({
 
         {children}
         </Layout>
+        <Toaster />
       </body>
     </html>
   );
