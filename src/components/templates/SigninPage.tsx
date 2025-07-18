@@ -5,6 +5,7 @@ import Btn from "../elements/Btn"
 import signin from "@/utils/signin"
 import toast from "react-hot-toast"
 import { redirect } from "next/navigation"
+import Cookies from "js-cookie";
 
 interface userForm  {
     email : string,
@@ -29,6 +30,7 @@ function SigninPage() {
         console.log(data);
         if(data.statusCode === 200) {
           toast.success("ورود با موفقیت انجام شد.")
+          Cookies.set("access_token" , data.access_token)
           redirect("/dashboard")
         }else {
           toast.error(data.message)

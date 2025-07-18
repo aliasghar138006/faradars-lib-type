@@ -1,0 +1,22 @@
+.container {
+    padding: 50px 40px;
+      background-color: #d2d2de;
+    border-radius: 20px;
+}
+
+.profileIcon {
+    scale: 5;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.container ul {
+    padding: 0;
+}
+
+.container li {
+    list-style: none;
+    margin: 10px 0;
+    cursor: pointer;
+  
+}

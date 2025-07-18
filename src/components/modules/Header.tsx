@@ -1,13 +1,17 @@
 
 
 import Image from 'next/image'
-import React from 'react'
+
 import styles from "@/modules/Header.module.css"
 import Logo from "@/images/logo.png"
 import Link from 'next/link'
 
+import { cookies } from 'next/headers'
 
-function Header() {
+
+async function Header() {
+  const cookie  = (await cookies()).get("access_token");
+  
   return (
      <div className={styles.container}>
       <div className={styles.icon}>
@@ -19,10 +23,12 @@ function Header() {
         <div> کتاب های من</div>
         <div> درباره ما</div>
       </div>
+        {cookie?.value.length ? <Link href={"/dashboard"}>حساب کاربری</Link> :
       <div className={styles.auth}>
         <Link href="/signup">ثبت نام</Link>
         <Link href="/signin">ورود</Link>
       </div>
+        } 
     </div>
   )
 }
