@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import Card from '../modules/Card'
 import getBooks from '@/utils/getBooks'
 import styles from "@/templates/MainPage.module.css"
@@ -10,19 +10,29 @@ type bookType = {
   title : string,
   description : string,
   author : string,
-  image : {data : {data : Buffer}}
+  image : {data : {data : Buffer}},
+  isExist:boolean
 }
-function Books() {
+const Books:FC<{isExist:boolean}> = ({isExist=false}) => {
     const [books , setBooks] =  useState<bookType[]>([])
      const [search , setSearch] =  useState<string>("")
      
   useEffect(() => {
     const getData = async () => {
       const data = await getBooks();
+
+      if(isExist) {
+      const filteredBooks= data.data.filter((item:bookType) => (item.title.includes(search)));
+      const notExistBooks = filteredBooks.filter((item:bookType) => (item.isExist === false))
+        setBooks(notExistBooks)
+      }else {
+
+        const filteredBooks= data.data.filter((item:bookType) => (item.title.includes(search)));
+        setBooks(filteredBooks)
+      }
       
-    const filteredBooks= data.data.filter((item:bookType) => (item.title.includes(search)));
-        
-      setBooks(filteredBooks)
+      
+    
     }
     getData();
   } , [search])
@@ -31,9 +41,9 @@ function Books() {
   }
   return (
      <div>
-        <div className={styles.searchBox}>
+        {books.length ? <div className={styles.searchBox}>
             <input placeholder="نام کتاب را وارد کنید..." type="text" value={search} onChange={changeHandler} />
-        </div>
+        </div> : <div className={styles.notFound}>کتابی یافت نشد</div>}
         <div className={styles.booksList}>
         
         {books.map(item => (

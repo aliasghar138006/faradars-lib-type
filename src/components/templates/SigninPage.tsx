@@ -47,7 +47,7 @@ function SigninPage() {
         <input type="text" name="email"  value={userForm.email} onChange={changeHandler} />
         
          <label htmlFor="password">پسورد:</label>
-        <input type="text" name="password" value={userForm.password} onChange={changeHandler} />
+        <input type="password" name="password" value={userForm.password} onChange={changeHandler} />
         
         <div onClick={signinHandler}>
           <Btn  text="ورود" />

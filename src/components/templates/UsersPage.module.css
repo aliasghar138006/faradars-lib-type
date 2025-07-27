@@ -1,0 +1,22 @@
+.container {
+    padding: 10px 50px;
+}
+
+.container h3 {
+    display: flex;
+    width: fit-content;
+    margin : auto
+}
+
+.container ul {
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: #d2d2de;
+    height: 70vh;
+    direction: ltr;
+    overflow: scroll;
+}
+
+.container li {
+    padding: 5px 10px;
+}

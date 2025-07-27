@@ -1,8 +1,16 @@
 
 
-/* .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 2%;
-} */
+.container {
+    border: 1px solid gray;
+    background-color: #d2d2de;
+    border-radius: 20px;
+    direction: ltr;
+    width: 60%;
+    padding: 50px;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+
+.container div {
+    margin: 20px 0px;
+}

@@ -47,7 +47,7 @@ function SignupPage() {
          <label htmlFor="userName">نام کاربری:</label>
         <input type="text" name="userName" value={userForm.userName} onChange={changeHandler} />
          <label htmlFor="password">پسورد:</label>
-        <input type="text" name="password" value={userForm.password} onChange={changeHandler} />
+        <input type="password" name="password" value={userForm.password} onChange={changeHandler} />
          <label htmlFor="confirmPassword">تکرار پسورد:</label>
         <input type="text" name="confirmPassword" value={userForm.confirmPassword} onChange={changeHandler} />
         <div onClick={signupHandler}>
