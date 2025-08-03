@@ -17,7 +17,8 @@ function Sidebar() {
     {selected : false,title:"کتب موجود" , path:"/books"},
     {selected : false,title:"کتب امانت داده شده" , path:"/debtbooks"},
     {selected : false,title:"لیست کاربران" , path:"/users"},
-    {selected : false, title:"تمدید و تحویل" , path:"/holdover"}
+    {selected : false, title:"تمدید و تحویل" , path:"/holdover"},
+    {selected : false, title:"درخواست تمدید" , path:"/holdoverreq"}
   ]
   const [item , setItem] = useState<items_type[]>(items);
 

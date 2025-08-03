@@ -5,7 +5,7 @@ function page() {
   return (
     <div>
 
-      <Books />
+      <Books isExist={true} />
     </div>
   )
 }

@@ -1,9 +1,10 @@
+import HoldOverPage from '@/components/templates/HoldOverPage'
 import React from 'react'
 
 function page() {
   return (
-    <div>page</div>
-  )
+    <HoldOverPage />
+    )
 }
 
 export default page

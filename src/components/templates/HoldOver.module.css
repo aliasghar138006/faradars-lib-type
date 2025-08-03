@@ -1,0 +1,36 @@
+.container {
+
+}
+
+.container li {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid gray;
+    border-radius: 15px;
+    padding: 5px 20px;
+}
+
+.buttons {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons div:first-child {
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    padding: 3px 20px;
+    cursor: pointer;
+}
+
+.buttons div:last-child {
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    padding: 3px 20px;
+    cursor: pointer;
+}

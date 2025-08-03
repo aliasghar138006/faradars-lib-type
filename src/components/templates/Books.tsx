@@ -21,12 +21,12 @@ const Books:FC<{isExist:boolean}> = ({isExist=false}) => {
     const getData = async () => {
       const data = await getBooks();
 
-      if(isExist) {
+      if(!isExist) {
       const filteredBooks= data.data.filter((item:bookType) => (item.title.includes(search)));
-      const notExistBooks = filteredBooks.filter((item:bookType) => (item.isExist === false))
-        setBooks(notExistBooks)
+      const ExistBooks = filteredBooks.filter((item:bookType) => (item.isExist === true))
+        setBooks(ExistBooks)
       }else {
-
+        
         const filteredBooks= data.data.filter((item:bookType) => (item.title.includes(search)));
         setBooks(filteredBooks)
       }
