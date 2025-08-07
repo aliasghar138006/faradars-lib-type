@@ -29,7 +29,8 @@ function HoldOverReqPage() {
 
     const holdHandler = async (item:bookType) => {
         const data = await setAdminBook(item);
-        if(data.statusCode == 200) {
+        
+        if(data.statusCode == 201) {
             toast.success("درخواست با موفقیت ارسال شد")
         }else {
             toast.error("درخواست ارسال شده است")

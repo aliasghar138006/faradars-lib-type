@@ -25,7 +25,15 @@
     margin:10px;
 }
 
-.items , .auth {
+.items {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,7 +44,7 @@
     cursor: pointer;
 }
 
-.items div  {
-    margin: 0px 50px;
+/* .items a  {
+    margin: 0px 30px;
     cursor: pointer;
-}
+} */

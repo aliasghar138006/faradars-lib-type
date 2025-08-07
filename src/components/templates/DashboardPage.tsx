@@ -1,11 +1,12 @@
 "use client"
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 import styles from "@/templates/DashboardPage.module.css"
 
 import { useJwt } from "react-jwt"
 import Cookies from "js-cookie";
+import { redirect } from "next/navigation";
 
 
 interface userData_type {
@@ -13,18 +14,21 @@ interface userData_type {
     user : {
       email : string,
       fullName:string,
-      username : string
+      username : string,
+      isAdmin:boolean
     }
   } | null
 }
 const DashboardPage = () => {
   const token:string = Cookies.get('access_token')
   const data:userData_type = useJwt(token);
-  console.log(data);
+  
+  
+  
   return (
     <div className={styles.container}>
         
-     <h3>Wlecome 👋</h3>
+     <h3>Wlecome {data?.decodedToken?.user?.isAdmin ? "Admin" : "User"}👋</h3>
      <div>
         <div>
           username :{data?.decodedToken?.user?.username}

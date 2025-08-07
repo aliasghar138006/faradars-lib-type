@@ -7,6 +7,7 @@ import toast from "react-hot-toast"
 import { redirect } from "next/navigation"
 import Cookies from "js-cookie";
 
+
 interface userForm  {
     email : string,
     
@@ -23,19 +24,23 @@ function SigninPage() {
         
     }
     const signinHandler =  async() => {
+      
         if(!userForm.email.length || !userForm.password.length) {
             toast.error("فیلد ها را پر کنید")
         }else {
              const data = await signin(userForm);
-        console.log(data);
+      
         if(data.statusCode === 200) {
           toast.success("ورود با موفقیت انجام شد.")
           Cookies.set("access_token" , data.access_token)
-          redirect("/dashboard")
+          
+          window.location.href = "/dashboard"
         }else {
           toast.error(data.message)
         }
         }
+
+        
 
        
       }

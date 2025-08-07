@@ -3,6 +3,8 @@ import React, { FC, useEffect, useState } from 'react'
 import Card from '../modules/Card'
 import getBooks from '@/utils/getBooks'
 import styles from "@/templates/MainPage.module.css"
+import NotFound from '../elements/NotFound'
+
 
 
 type bookType = {
@@ -13,13 +15,16 @@ type bookType = {
   image : {data : {data : Buffer}},
   isExist:boolean
 }
+
 const Books:FC<{isExist:boolean}> = ({isExist=false}) => {
     const [books , setBooks] =  useState<bookType[]>([])
      const [search , setSearch] =  useState<string>("")
      
+  
   useEffect(() => {
     const getData = async () => {
-      const data = await getBooks();
+    
+         const data = await getBooks();
 
       if(!isExist) {
       const filteredBooks= data.data.filter((item:bookType) => (item.title.includes(search)));
@@ -30,6 +35,8 @@ const Books:FC<{isExist:boolean}> = ({isExist=false}) => {
         const filteredBooks= data.data.filter((item:bookType) => (item.title.includes(search)));
         setBooks(filteredBooks)
       }
+      
+     
       
       
     
@@ -43,7 +50,7 @@ const Books:FC<{isExist:boolean}> = ({isExist=false}) => {
      <div>
         {books.length ? <div className={styles.searchBox}>
             <input placeholder="نام کتاب را وارد کنید..." type="text" value={search} onChange={changeHandler} />
-        </div> : <div className={styles.notFound}>کتابی یافت نشد</div>}
+        </div> : <NotFound />}
         <div className={styles.booksList}>
         
         {books.map(item => (
