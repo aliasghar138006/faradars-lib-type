@@ -4,6 +4,7 @@ import styles from "@/templates/HoldOverReq.module.css"
 import Cookies from "js-cookie";
 import parseJwt from '@/utils/parseJwt';
 import NotFound from '../elements/NotFound';
+import { redirect } from 'next/navigation';
 
 
 
@@ -29,12 +30,14 @@ type bookType = {
     }
 function MyBooks() {
     const [books , setBooks] = useState<bookType[]>([]);
-    const token:string = Cookies.get('access_token')
+    const token:string = Cookies.get('access_token');
+    if (!token) redirect("/") 
     const data:userData_type = parseJwt(token);
     useEffect(() => {
-        
-    setBooks(data.user.books)
+     
+    setBooks(data?.user?.books)
     } , [])
+    
   return (
     <div className={styles.container}>
         <ul>
